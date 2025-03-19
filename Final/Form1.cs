@@ -16,6 +16,10 @@ namespace Final
         private Form7 form7;
         private Form6 form6;
         private bool isSignedIn = false;
+
+        private string receivedText;
+        private int receivedIndex;
+
         public Form1()
         {
             InitializeComponent();
@@ -143,6 +147,7 @@ namespace Final
             label23.Click += (sender, e) => OpenForm2(22);
             label24.Click += (sender, e) => OpenForm2(23);
         }
+
         private void OpenForm2(int index)
         {
             if (form7 == null) form7 = new Form7();
@@ -153,8 +158,17 @@ namespace Final
 
         public void ReceiveData(string text, int index)
         {
-            Form10 form10 = new Form10(text, index);
-            form10.Show();
+            receivedText = text;
+            receivedIndex = index;
+        }
+
+        private void вхідToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isSignedIn)
+            {
+                Form10 form10 = new Form10(receivedText, receivedIndex);
+                form10.Show();
+            }
         }
 
         public void UpdateAppearance(Color backgroundColor, int textSize, Color textColor)
@@ -251,6 +265,7 @@ namespace Final
             label24.ForeColor = textColor;
             label24.Font = new Font(label24.Font.FontFamily, textSize);
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -365,25 +380,26 @@ namespace Final
         {
 
         }
+
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-
             foreach (Control ctrl in this.Controls)
             {
                 ctrl.Top -= e.NewValue - e.OldValue;
             }
         }
+
         private void вхідToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             isSignedIn = true;
-            Form4 form4 = new Form4();
+            Form4 form4 = new Form4(this);
             form4.Show();
         }
 
         private void реєстраціяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             isSignedIn = true;
-            Form5 form5 = new Form5();
+            Form5 form5 = new Form5(this);
             form5.Show();
         }
 
@@ -392,6 +408,7 @@ namespace Final
             Form8 form8 = new Form8(this);
             form8.Show();
         }
+
         private void вибранеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (form6 == null || form6.IsDisposed)
@@ -405,7 +422,7 @@ namespace Final
         {
 
         }
-     
+
         private void кошикToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (form7 == null || form7.IsDisposed)
@@ -419,23 +436,6 @@ namespace Final
         {
             Form3 form3 = new Form3();
             form3.Show();
-        }
-
-        private void вхідToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (isSignedIn)
-            {
-                string text = "Some text"; 
-                int index = 1;
-
-                Form10 form10 = new Form10(text, index);
-                form10.Show();
-            }
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

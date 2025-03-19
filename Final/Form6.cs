@@ -20,7 +20,7 @@ namespace Final
 
         private void SaveListBoxData()
         {
-            string filePath = Path.Combine(Application.StartupPath, "listbox_data.txt");
+            string filePath = Path.Combine(Application.StartupPath, "data.txt");
 
             try
             {

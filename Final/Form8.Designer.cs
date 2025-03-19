@@ -147,9 +147,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(537, 372);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(100, 20);
             label1.TabIndex = 9;
-            label1.Text = "label1";
+            label1.Text = "назва товару";
             // 
             // button2
             // 
@@ -157,7 +157,7 @@
             button2.Name = "button2";
             button2.Size = new Size(145, 52);
             button2.TabIndex = 10;
-            button2.Text = "button2";
+            button2.Text = "Підтвердити зміни";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

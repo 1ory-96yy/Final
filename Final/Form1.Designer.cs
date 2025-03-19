@@ -198,7 +198,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(760, 577);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "перша сторінка";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -592,7 +592,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(760, 577);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "друга сторінка";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // pictureBox21
@@ -822,7 +822,6 @@
             label13.Size = new Size(90, 64);
             label13.TabIndex = 12;
             label13.Text = "Навушники Hator Hypergang 2 X Wireless Black/Yellow (HTA-650)";
-            label13.Click += label13_Click;
             // 
             // button21
             // 
@@ -941,14 +940,14 @@
             // вхідToolStripMenuItem1
             // 
             вхідToolStripMenuItem1.Name = "вхідToolStripMenuItem1";
-            вхідToolStripMenuItem1.Size = new Size(167, 26);
+            вхідToolStripMenuItem1.Size = new Size(224, 26);
             вхідToolStripMenuItem1.Text = "вхід";
             вхідToolStripMenuItem1.Click += вхідToolStripMenuItem1_Click;
             // 
             // реєстраціяToolStripMenuItem
             // 
             реєстраціяToolStripMenuItem.Name = "реєстраціяToolStripMenuItem";
-            реєстраціяToolStripMenuItem.Size = new Size(167, 26);
+            реєстраціяToolStripMenuItem.Size = new Size(224, 26);
             реєстраціяToolStripMenuItem.Text = "реєстрація";
             реєстраціяToolStripMenuItem.Click += реєстраціяToolStripMenuItem_Click;
             // 
@@ -979,7 +978,7 @@
             vScrollBar1.Location = new Point(774, 28);
             vScrollBar1.Maximum = 200;
             vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(26, 673);
+            vScrollBar1.Size = new Size(26, 404);
             vScrollBar1.SmallChange = 10;
             vScrollBar1.TabIndex = 2;
             vScrollBar1.Scroll += vScrollBar1_Scroll;
@@ -988,7 +987,7 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 675);
+            statusStrip1.Location = new Point(0, 406);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(774, 26);
             statusStrip1.TabIndex = 3;
@@ -1005,7 +1004,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 701);
+            ClientSize = new Size(800, 432);
             Controls.Add(statusStrip1);
             Controls.Add(vScrollBar1);
             Controls.Add(tabControl1);

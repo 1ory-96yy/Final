@@ -81,11 +81,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(345, 328);
+            button1.Location = new Point(322, 323);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(150, 29);
             button1.TabIndex = 5;
-            button1.Text = "button1";
+            button1.Text = "Зареєструватися";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 

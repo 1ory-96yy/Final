@@ -1,53 +1,49 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Final
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        private Form1 form1;
+
+        public Form4(Form1 form1)
         {
             InitializeComponent();
+            this.form1 = form1;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string textBox1Text = textBox1.Text;
+            string username = textBox1.Text;
+            string password = textBox2.Text;
             string filePath = Path.Combine(Application.StartupPath, "output.txt");
-            int currentIndex = 1;
 
             if (File.Exists(filePath))
             {
                 string[] existingLines = File.ReadAllLines(filePath);
 
-                foreach (string line in existingLines)
+                for (int i = 0; i < existingLines.Length; i++)
                 {
-                    if (line.Contains(textBox1Text))  
+                    if (existingLines[i] == "-" && i + 1 < existingLines.Length && existingLines[i + 1] == username)
                     {
-                        MessageBox.Show("Такий текст вже є в списку.");
-                        return;
+                        if (i + 2 < existingLines.Length && existingLines[i + 2] == password)
+                        {
+                            MessageBox.Show("Вхід успішний.");
+                            form1.ReceiveData(username, i / 3);
+                            this.Close();
+                            return;
+                        }
                     }
                 }
 
-                currentIndex = existingLines.Length + 1;
+                MessageBox.Show("Неправильне ім'я користувача або пароль.");
             }
-            string textToWrite = $"{currentIndex}. {textBox1Text}{Environment.NewLine}";
-
-            try
+            else
             {
-                File.AppendAllText(filePath, textToWrite);
-                MessageBox.Show("Текст успішно записано в файл.");
-
-                Form1 form1 = new Form1();
-                form1.ReceiveData(textBox1Text, currentIndex);
-                form1.Show(); 
-
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Помилка при записі в файл: " + ex.Message);
+                MessageBox.Show("Файл користувачів не знайдено.");
             }
         }
     }
